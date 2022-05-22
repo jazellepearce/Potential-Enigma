@@ -47,7 +47,7 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'Select a license?',
-        choices: ['Apache', 'MIT', 'UNLICENSED', 'Creative Commons']
+        choices: ['Apache', 'MIT', 'Mozilla']
     },
     {
         type: 'input',
@@ -63,14 +63,23 @@ const questions = [
 
 
 ];
- inquirer.prompt (questions) .then (generateMarkdown) .then(console.log)
- 
+
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile('generateMarkdown.js', content, err => {
+        if (err) {
+          console.error(err);
+        }
+        // file written successfully
+      });
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt (questions) .then (generateMarkdown) .then(console.log)
+ 
+}
 
 // Function call to initialize app
 init();
