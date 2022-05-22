@@ -56,7 +56,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'questions',
+        name: 'email',
         message: 'Enter email address'
     },
 
