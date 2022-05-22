@@ -12,7 +12,9 @@ function renderLicenseBadge(license) {
     license.license = "N/A"
   }
   return yourLicense;
+  
 };
+
 
 
 
@@ -45,6 +47,7 @@ function generateMarkdown(data) {
   ${data.usage}
   ## License
   ${data.license}
+  ${renderLicenseBadge} 
   ## Contribution
   ${data.contribution}
   ## tests
@@ -53,7 +56,9 @@ function generateMarkdown(data) {
   You can reach me about any questions at ${data.email}
   ## Username
   Checkout my github (${data.username})['https://github.com/${data.username}']
+
 `;
 }
 
 module.exports = generateMarkdown;
+
