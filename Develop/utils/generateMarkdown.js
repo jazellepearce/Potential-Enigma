@@ -24,15 +24,13 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
   ${data.description}
   ## Table of Contents
-  ${Object.keys(data).map(path=>{
-    if (path==='email'){
-      return`*(questions)["/#questions"]`
-    }
-      
-    return`*(${path})["/#${path}"]
-    
-    `
-  })}
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  * 
   ## Installation
   ${data.installation}
   ## Usage
@@ -54,3 +52,13 @@ function generateMarkdown(data) {
 
 module.exports = generateMarkdown;
 
+/*${Object.keys(data).map(path=>{
+  if (path==='email'){
+    return`*(questions)["/#questions"]`
+  }
+    
+  return`*(${path})["/#${path}"]
+  
+  `
+})}
+*/
