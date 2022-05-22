@@ -81,8 +81,8 @@ function writeToFile(fileName, data) {
     }; 
 }
 
-function writeFile = data => {
-    fs.writeFile('./README.md', data, err => {
+const writeFile = data => {
+    fs.writeFile('README.md', data, err => {
         // if there is an error 
         if (err) {
             console.log(err);
@@ -93,11 +93,13 @@ function writeFile = data => {
         }
     })
 }; 
-}
+
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt (questions) .then (generateMarkdown) .then(console.log)
+    inquirer.prompt (questions) .then (generateMarkdown) .then(data => {
+        return writeFile(data);
  
+})
 }
 
 // Function call to initialize app

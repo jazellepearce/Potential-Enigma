@@ -31,7 +31,7 @@ function generateMarkdown(data) {
   
   return `# ${data.title}
  
-
+  ${renderLicenseBadge(data.license)}
   ${data.description}
   ## Table of Contents
   ${Object.keys(data).map(path=>{
@@ -48,7 +48,6 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
   ## License
-  ${renderLicenseBadge(data.license)}
   ${data.license}
  
   ## Contribution
