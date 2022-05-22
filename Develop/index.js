@@ -44,7 +44,7 @@ const questions = [
         message: 'Provide test guidelines'
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: 'Select a license?',
         choices: ['Apache', 'MIT', 'Mozilla']
@@ -67,14 +67,33 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('generateMarkdown.js', content, err => {
-        if (err) {
-          console.error(err);
-        }
-        // file written successfully
-      });
+    const writeFile = data => {
+        fs.writeFile('README.md', data, err => {
+            // if there is an error 
+            if (err) {
+                console.log(err);
+                return;
+            // when the README has been created 
+            } else {
+                console.log("Your README has been successfully created!")
+            }
+        })
+    }; 
 }
 
+function writeFile = data => {
+    fs.writeFile('./README.md', data, err => {
+        // if there is an error 
+        if (err) {
+            console.log(err);
+            return;
+        // when the README has been created 
+        } else {
+            console.log("Your README has been successfully created!")
+        }
+    })
+}; 
+}
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt (questions) .then (generateMarkdown) .then(console.log)
@@ -83,3 +102,4 @@ function init() {
 
 // Function call to initialize app
 init();
+
